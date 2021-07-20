@@ -49,7 +49,7 @@ function ToDoList() {
   
   return (
     <div>
-      <Summary tasksCompleted={tasksCompleted}/>     {/*  👈 UPDATE   */}
+      <Summary tasksCompleted={tasksCompleted}/>
 
       <div className="todo-container">
         {tasks.map((task) => <Task key={task._id} task={task}  toggleTask={toggleTaskDone} /> )}
