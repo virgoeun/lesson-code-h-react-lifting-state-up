@@ -14,7 +14,7 @@ function Task(props) {
 
         <button 
           className="add"
-          onClick={() => props.toggleTask(props.task._id)}      // <==  UPDATE  
+          onClick={() => props.toggleTask(props.task._id)}
         >
         {props.task.isDone
             ? <span>UNDO ❌</span>
