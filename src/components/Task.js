@@ -4,7 +4,7 @@ function Task(props) {
     <div className="task-card">
       <div className="task-card-half">
         <h1>{props.task.name}</h1>
-        {false
+        {props.task.isDone                                 // <== UPDATE
           ? <span>DONE ✅</span>
           : <span>PENDING ⌛</span>
         }
@@ -13,7 +13,7 @@ function Task(props) {
         <p>{props.task.description}</p>
 
         <button className="add" onClick={() => { }}>
-          {false
+        {props.task.isDone                                 // <== UPDATE
             ? <span>UNDO ❌</span>
             : <span>✔️</span>
           }
