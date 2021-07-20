@@ -29,7 +29,7 @@ function ToDoList() {
   const [tasksCompleted, setTasksCompleted] = useState(0);
 
 
-  const toggleTaskDone = (id) => {                                     // <== ADD
+  const toggleTaskDone = (id) => {
     const tasksCopy = [...tasks];
       
     tasksCopy.forEach((task) => {
@@ -51,8 +51,8 @@ function ToDoList() {
     <div>
       <Summary />
 
-      <div className="todo-container">
-        {tasks.map((task) => <Task key={task._id} task={task} /> )}
+      <div className="todo-container">                         {/*  👇 ADD   */}
+        {tasks.map((task) => <Task key={task._id} task={task} toggleTask={toggleTaskDone} /> )}
       </div>
     </div>
   );
