@@ -1,22 +1,24 @@
-function Task(props) {
+function Task({name, isDone, description, _id, toggleTask}) {
+// console.log("TASK PROPS", props);
+//const {name, isDone, description, _id} = props.tasks
 
   return (
     <div className="task-card">
       <div className="task-card-half">
-        <h1>{props.task.name}</h1>
-        {props.task.isDone
+        <h1>{name}</h1>
+        {isDone
           ? <span>DONE ✅</span>
           : <span>PENDING ⌛</span>
         }
 
         <h2> Task Description </h2>
-        <p>{props.task.description}</p>
+        <p>{description}</p>
 
         <button 
           className="add"
-          onClick={() => props.toggleTask(props.task._id)}
+          onClick={() => {toggleTask(_id)}} // get the data from parent(To-do)
         >
-        {props.task.isDone
+        {isDone
             ? <span>UNDO ❌</span>
             : <span>✔️</span>
           }
