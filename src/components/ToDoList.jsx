@@ -28,7 +28,9 @@ function ToDoList() {
   const [tasksCompleted, setTasksCompleted] = useState(0); //lifting state-up
 
   const toggleTaskDone = (id) => {
+    console.log(id)
     const tasksCopy = [...tasks];
+    
 
     tasksCopy.forEach((task) => {
       // Find the selected task and update task's `isDone` property,
@@ -65,16 +67,10 @@ function ToDoList() {
       setTasks(tasksCopy); //update the 'isDone' part and returns a new (updated) array
       console.log("TasksCopy:", tasksCopy);
       console.log("Updated tasksCompleted:", tasksCompleted);
+      console.log("I am checking console.")
     });
     
   };
-
-  // useEffect ? ? ?
-  // for logging the value of tasksCompleted to the console whenever it changes.
-  // dependency:  [tasksCompleted]
-  useEffect(() => {
-    console.log("SUMMARY PROPS:", tasksCompleted);
-  }, [tasksCompleted]);
 
   return (
     <div>
@@ -83,10 +79,15 @@ function ToDoList() {
         {tasks.map((task) => (
           <Task
             key={task._id}
-            name={task.name}
-            description={task.description}
-            isDone={task.isDone}
+            // _id={task._id}
+            // name={task.name}
+            // description={task.description}
+            // isDone={task.isDone}
+            {...task} 
+            // this also works! Spread the object keys and values 
+            // and they will automatically be assigned to the component props
             toggleTask={toggleTaskDone}
+            
           />
           // <Task key={task._id} task={task} toggleTask={toggleTaskDone} />
         ))}

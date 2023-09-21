@@ -1,4 +1,6 @@
 function Task({name, isDone, description, _id, toggleTask}) {
+
+  //console.log("TASK PROPS", props);
 // console.log("TASK PROPS", props);
 //const {name, isDone, description, _id} = props.tasks
 
